@@ -10,6 +10,7 @@ while IFS= read -r line ; do
 		echo $var2 >> ~/.ssh/authorized_keys
 		chmod -R go= ~/.ssh
 		sed -i "s/^PasswordAuthentication.*/PasswordAuthentication no/" /etc/ssh/sshd_config
+		systemctl restart sshd.service
 	fi
 done <"$1"
 
