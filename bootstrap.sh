@@ -14,4 +14,4 @@ while IFS= read -r line ; do
 		systemctl restart sshd.service
 	fi
 done <"$1"
-} > /var/log/system-bootstrap.log
+} &> /var/log/system-bootstrap.log
