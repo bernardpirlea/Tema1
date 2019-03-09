@@ -1,4 +1,5 @@
 #!/bin/bash
+{
 while IFS= read -r line ; do
 	var1=$(echo $line | cut -f1 -d:)
 	var2=$(echo $line | cut -f2 -d:)
@@ -13,4 +14,4 @@ while IFS= read -r line ; do
 		systemctl restart sshd.service
 	fi
 done <"$1"
-
+} > /var/log/system-bootstrap.log
