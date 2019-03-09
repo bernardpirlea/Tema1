@@ -5,5 +5,11 @@ while IFS= read -r line ; do
 	if [[ $var1 == *"update"*  ]] && [[ $var2 == *"yes"* ]]; then
 		yum -y update
 	fi
+	if [[ $var1 == *"sshkey"* ]]; then
+		mkdir -p ~/.ssh
+		echo $var2 >> ~/.ssh/authorized_keys
+		chmod -R go= ~/.ssh
+		sed -i "s/^PasswordAuthentication.*/PasswordAuthentication no/" /etc/ssh/sshd_config
+	fi
 done <"$1"
 
