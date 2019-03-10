@@ -23,7 +23,6 @@ while IFS= read -r line ; do
 	if [[ $var1 == *"install"* ]]; then
 		yum -y install $var2
 	fi
-	if
 	if [[ $var1 == *"network"* ]]; then
 		ifup $var2
 	fi	
