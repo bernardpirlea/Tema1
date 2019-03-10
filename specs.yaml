@@ -2,6 +2,7 @@ update: yes
 sshkey: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3avTcWflyzCq8E1zsSk+lY+XM0UCDtOIdwKiewjV29BjFgUkmicSg2qGpVk2Q6crrQoMtF6/6ZDc5iHzi8JHA9AwXz/meykoIV5Fkh2XfBRPwDTjMP8CjWp572NL6k3Zqp4/dd9vLsXe6iywkiub+h1PiMndoVPAUsFQwDzi2MGupOrl0DkTtheLaRr+Qw01wb6F6lLk99TT9Pe45nrBViriwHCvluXmpEQxi9t7FZw5AMBj0z4SrI8vyrCw4aUCAOAMZIXgD81beNRbiLr99DkkDyH2u3NHgO8sfqHLhjkloybomWGIVmCxvAbRcJDDSO6XYJ7iuCGHHTaXtXLCB bernardpirlea@192-168-0-104.rdsnet.ro
 hostname: NewHostName
 selinux: disabled
-install: pyhton
+install: pyhton3
+install: vim
 network: enp0s3
 
