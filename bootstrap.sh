@@ -13,5 +13,19 @@ while IFS= read -r line ; do
 		sed -i "s/^PasswordAuthentication.*/PasswordAuthentication no/" /etc/ssh/sshd_config
 		systemctl restart sshd.service
 	fi
+	if [[ $var1 == *"selinux"* ]] && [[ $var2 == *"disabled" ]]; then
+		sed -i "s/^SELINUX=.*/SELINUX=disabled/" /etc/selinux/config
+		setenforce 0
+	fi
+	if [[ $var1 == *"hostname"* ]]; then
+		hostnamectl set-hostname $var2
+	fi
+	if [[ $var1 == *"install"* ]]; then
+		yum -y install $var2
+	fi
+	if
+	if [[ $var1 == *"network"* ]]; then
+		ifup $var2
+	fi	
 done <"$1"
 } &> /var/log/system-bootstrap.log
