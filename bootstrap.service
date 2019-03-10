@@ -4,8 +4,9 @@ Description=This is a homework
 [Service]
 Type=oneshot
 WorkingDirectory=/root
-ExecStart=/usr/bin/yum install -y git
-ExecStart=/usr/bin/git clone https://github.com/bernardpirlea/Tema1.git
+#ExecStart=/usr/bin/yum install -y git
+#ExecStart=/usr/bin/git clone https://github.com/bernardpirlea/Tema1.git
+ExecStart=/usr/bin/bash /root/Tema1/bootstrap.sh /root/Tema1/specs.yaml
 
 [Install]
 WantedBy=multi-user.target
